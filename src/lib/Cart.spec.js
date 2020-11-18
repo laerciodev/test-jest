@@ -2,12 +2,13 @@ import Cart from "./Cart";
 
 describe("Cart", () => {
   let cart;
+  let product;
 
   beforeEach(() => {
     cart = new Cart();
   });
 
-  it("should return 0 when getTotal() is executed in a newly created instance", () => {
+  fit("should return 0 when getTotal() is executed in a newly created instance", () => {
     const cart = new Cart();
     expect(cart.getTotal()).toEqual(0);
   });
@@ -24,5 +25,17 @@ describe("Cart", () => {
     cart.add(item);
 
     expect(cart.getTotal()).toEqual(70776);
+  });
+
+  it("should ensure no more than on product exists at a time", () => {
+    add.product({
+      product,
+      quantity: 2,
+    });
+
+    add.product({
+      product,
+      quantity: 1,
+    });
   });
 });
