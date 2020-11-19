@@ -1,3 +1,5 @@
+import find from "lodash/find";
+
 export default class Cart {
   items = [];
 
